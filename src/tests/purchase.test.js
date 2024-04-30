@@ -33,14 +33,13 @@ beforeAll(async() => {
     }
 
     cart = await Cart.create(cartBody);
-    // console.log(product)
+    console.log(cart)
 
 });
 
 test("POST -> BASE_URL, should return statusCode 201 and res.body.quantity === purchases.quantity", async () => {
     const purchase = {
-        quantity:5,
-        cartId: cart.id
+        quantity:5
     }
 
     const res = await request(app)
@@ -52,6 +51,6 @@ test("POST -> BASE_URL, should return statusCode 201 and res.body.quantity === p
     expect(res.body).toBeDefined()
     expect(res.body.quantity).toBe(purchase.quantity)
 
-    await product.destroy()
+    await cart.destroy()
 
 });
