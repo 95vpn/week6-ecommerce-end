@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../utils/connection');
 
-const Purchase = sequelize.define('purchases', {
+const Purchase = sequelize.define('purchase', {
     //userId
     //productId
     quantity: {
